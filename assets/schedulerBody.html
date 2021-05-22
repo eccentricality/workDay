@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Daily Scheduler</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/css/bootstrap.css">
@@ -13,26 +12,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/reset.css">
         <link rel="stylesheet" href="./assets/style.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-
     <body>
 
-        <article id="landingBg">
-            <img src="assets/images/natureBg.jpg"/>
-        </article>
+        <article id="scheduleBody">
 
-        <article class="todayHeader">
-            <p id="today"></p>
-        </article>
-
-        <article id="openButton">
-            <button id="openSchedulerButton">OPEN SCHEDULER</button>
-        </article>
-
-        <script src="./assets/homepage.js" async defer></script>
+            <header class="jumbotron">
+                <h1 class="display-2">SCHEDULE YOUR DAY</h1>
+                <p class="lead">hour by hour scheduler for your day</p>
+                <p id="today" class="lead"></p>
+            </header>
     
-    </body>
+            <div class="scheduleTable">
+            </div>
 
+        </article>
+    
+        <script src="./assets/js/bootstrap.js" async defer></script>
+        <script src="./assets/script.js" async defer></script>
+    </body>
 </html>

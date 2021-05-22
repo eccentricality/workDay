@@ -12,14 +12,67 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
+#landingBg {
+    height: 100%;
+    width: 100%;
+}
+
+#landingBg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#today {
+    position: absolute;
+    color: var(--cnbOrange);
+    text-shadow: 2px 2px 5px white;
+    font-weight: bold;
+    font-size: 60px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* open scheduler button */
+#openButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+/* button design for opening scheduler */
+#openSchedulerButton {
+    opacity: 0.5;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--cnbTeal);
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: var(--cnbOrange);
+    cursor: pointer;
+}
+
+/* hover design for button */
+#openSchedulerButton:hover {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+/* hide reveal concept grabbed from code quiz assignment */
+#scheduleBody {
+    opacity: 1;
+    z-index: 5;
+}
 
 .jumbotron {
     text-align: center;
     background-color: var(--cnbAqua);
     color: white;
     box-shadow: 0px 3px 5px 1px black;
-}
-
-.scheduleBody {
-    
 }
