@@ -1,3 +1,25 @@
+/* colorful and balanced color scheme taken from https://visme.co/blog/website-color-schemes */
+:root {
+    --cnbOrange: #e27d60;
+    --cnbTeal: #85dcb8;
+    --cnbPeach: #e8a87c;
+    --cnbPink: #c38d9e;
+    --cnbAqua: #41b3a3;
+}
+
+/* imported google font https://fonts.google.com/specimen/Varela+Round?query=varela */
 body {
     font-family: 'Varela Round', sans-serif;
+}
+
+
+.jumbotron {
+    text-align: center;
+    background-color: var(--cnbAqua);
+    color: white;
+    box-shadow: 0px 3px 5px 1px black;
+}
+
+.scheduleBody {
+    
 }
