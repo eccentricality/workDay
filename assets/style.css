@@ -97,6 +97,17 @@ body {
     border-top: 1px dashed white;
 }
 
+/* adjust styling for input area with all information for each hour */
+textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    resize: none;
+    color: black;
+    padding: 15px;
+}
+
 /* styling for schedule time */
 .scheduleTime {
     background-color: var(--cnbAqua);
@@ -104,4 +115,23 @@ body {
     font-size: 40px;
     text-align: center;
     padding-top: 30px;
+    border-right: 3px solid white;
+}
+
+/* styling to indicate past time in scheduler */
+.past {
+    background-color: gray;
+    color: white;
+}
+
+/* styling to indicate present time in scheduler */
+.present {
+    background-color: var(--cnbTeal);
+    color: black;
+}
+
+/* styling to indicate future time in scheduler */
+.future {
+    background-color: var(--cnbPink);
+    color: black;
 }

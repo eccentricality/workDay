@@ -4,121 +4,121 @@ $('#todayInScheduler').text(todayHeader.format("MMM Do, YYYY"));
 // day container
 let todaysTimes = [
     {
-        id: 0,
+        id: '0',
         scheduleTime: '07:00',
-        actualTime: '07:00',
-        amPm: 'am',
+        actualTime: '07',
+        amPm: ' AM',
         notes: ''
     },
     {
-        id: 1,
+        id: '1',
         scheduleTime: '08:00',
-        actualTime: '08:00',
-        amPm: 'am',
+        actualTime: '08',
+        amPm: ' AM',
         notes: ''
     },
     {
-        id: 2,
+        id: '2',
         scheduleTime: '09:00',
-        actualTime: '09:00',
-        amPm: 'am',
+        actualTime: '09',
+        amPm: ' AM',
         notes: ''
     },
     {
-        id: 3,
+        id: '3',
         scheduleTime: '10:00',
-        actualTime: '10:00',
-        amPm: 'am',
+        actualTime: '10',
+        amPm: ' AM',
         notes: ''
     },
     {
-        id: 4,
+        id: '4',
         scheduleTime: '11:00',
-        actualTime: '11:00',
-        amPm: 'am',
+        actualTime: '11',
+        amPm: ' AM',
         notes: ''
     },
     {
-        id: 5,
+        id: '5',
         scheduleTime: '12:00',
-        actualTime: '12:00',
-        amPm: 'pm',
+        actualTime: '12',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 6,
+        id: '6',
         scheduleTime: '01:00',
-        actualTime: '01:00',
-        amPm: 'pm',
+        actualTime: '13',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 7,
+        id: '7',
         scheduleTime: '02:00',
-        actualTime: '02:00',
-        amPm: 'pm',
+        actualTime: '14',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 8,
+        id: '8',
         scheduleTime: '03:00',
-        actualTime: '03:00',
-        amPm: 'pm',
+        actualTime: '15',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 9,
+        id: '9',
         scheduleTime: '04:00',
-        actualTime: '04:00',
-        amPm: 'pm',
+        actualTime: '16',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 10,
+        id: '10',
         scheduleTime: '05:00',
-        actualTime: '05:00',
-        amPm: 'pm',
+        actualTime: '17',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 11,
+        id: '11',
         scheduleTime: '06:00',
-        actualTime: '06:00',
-        amPm: 'pm',
+        actualTime: '18',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 12,
+        id: '12',
         scheduleTime: '07:00',
-        actualTime: '07:00',
-        amPm: 'pm',
+        actualTime: '19',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 13,
+        id: '13',
         scheduleTime: '08:00',
-        actualTime: '08:00',
-        amPm: 'pm',
+        actualTime: '20',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 14,
+        id: '14',
         scheduleTime: '09:00',
-        actualTime: '09:00',
-        amPm: 'pm',
+        actualTime: '21',
+        amPm: ' PM',
         notes: ''
     },
     {
-        id: 15,
+        id: '15',
         scheduleTime: '10:00',
-        actualTime: '10:00',
-        amPm: 'pm',
+        actualTime: '22',
+        amPm: ' PM',
         notes: ''
     }
 ]
 
 // dynamically create and append actual scheduler
-todaysTimes.forEach(function(thisHour) {
+todaysTimes.forEach(function(thisTime) {
     
     // create the rows for time with form so notes can be typed in
     let timeRow = $('<form>').attr({'class': 'row'});
@@ -126,10 +126,31 @@ todaysTimes.forEach(function(thisHour) {
 
     // create schedule time
     let schedulerTime = $('<div>')
-        .text(`${thisHour.scheduleTime}${thisHour.amPm}`)
+        .text(`${thisTime.scheduleTime}${thisTime.amPm}`)
         .attr({'class': 'col-md-2 scheduleTime'});
 
-    timeRow.append(schedulerTime);
+    // create area to append schedule data
+    let schedulerInfo = $('<div>')
+        .attr({'class': 'col-md-8 information p-0'});
+
+    // create area to append data and assess whether past present or future
+    let todaysPlans = $('<textarea>');
+
+    todaysPlans.attr('id', thisTime.id);
+    schedulerInfo.append(todaysPlans);
+
+    if (thisTime.actualTime < moment().format('HH')) {
+        todaysPlans.attr({'class': 'past'});
+    }
+    else if (thisTime.actualTime === moment().format('HH')) {
+        todaysPlans.attr({'class': 'present'});
+    }
+    else if (thisTime.actualTime > moment().format('HH')) {
+        todaysPlans.attr({'class': 'future'});
+    }
+
+
+    timeRow.append(schedulerTime, schedulerInfo);
 
 })
 
