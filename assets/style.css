@@ -108,6 +108,11 @@ textarea {
     padding: 15px;
 }
 
+textarea:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 2px 1px black;
+}
+
 /* styling for schedule time */
 .scheduleTime {
     background-color: var(--cnbAqua);
@@ -134,4 +139,18 @@ textarea {
 .future {
     background-color: var(--cnbPink);
     color: black;
+}
+
+/* styling for save button */
+.saveButton {
+    background-color: var(--cnbAqua);
+    color: white;
+    border: none;
+    opacity: .7;
+}
+
+.saveButton:hover {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+    box-shadow: 0px 1px 1px 1px white;
 }

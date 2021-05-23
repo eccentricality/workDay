@@ -139,6 +139,7 @@ todaysTimes.forEach(function(thisTime) {
     todaysPlans.attr('id', thisTime.id);
     schedulerInfo.append(todaysPlans);
 
+    // assesses current time status compared to actual time from moment
     if (thisTime.actualTime < moment().format('HH')) {
         todaysPlans.attr({'class': 'past'});
     }
@@ -149,12 +150,10 @@ todaysTimes.forEach(function(thisTime) {
         todaysPlans.attr({'class': 'future'});
     }
 
+    // create a save button to store data into local storage
+    let saveInformation = $('<i class="far fa-save fa-lg"></i>')
+    let saveButton = $('<button>').attr({'class': 'col-md-2 saveButton'});
 
-    timeRow.append(schedulerTime, schedulerInfo);
-
+    saveButton.append(saveInformation);
+    timeRow.append(schedulerTime, schedulerInfo, saveButton);
 })
-
-// function to save notes to local storage to be called back
-// function saveNotes() {
-//     localStorage.setItem('todaysNotes', JSON.stringify(todaysNotes));
-// }
